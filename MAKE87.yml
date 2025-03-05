@@ -2,5 +2,27 @@ build_kit:
   name: rust
   version: latest
 inbound_topics:
-  - name: INCOMING_MESSAGE
-    message_type: make87_messages.text.text_plain.PlainText:0.0.82
+  - name: INCOMING_MESSAGE_0
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_1
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_2
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_3
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_4
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_5
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_6
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_7
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_8
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+  - name: INCOMING_MESSAGE_9
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+outbound_topics:
+  - name: OUTGOING_MESSAGE_0
+    message_type: make87_messages.image.compressed.image_jpeg.ImageJPEG
+
