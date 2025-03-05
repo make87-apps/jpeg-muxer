@@ -1,5 +1,5 @@
-use std::sync::Arc;
 use make87_messages::image::compressed::ImageJpeg;
+use std::sync::Arc;
 
 fn main() {
     make87::initialize();
@@ -26,13 +26,14 @@ fn main() {
         match make87::resolve_topic_name(&topic_name) {
             Some(resolved_topic_name) => {
                 if let Some(topic) = make87::get_subscriber::<ImageJpeg>(resolved_topic_name) {
-                    topic.subscribe(move |message| {
-                        println!("Received message '{:?}'", message);
-                        match publisher.publish(&message) {
-                            Ok(()) => println!("Published: {:?}", &message),
-                            Err(_) => eprintln!("Failed to publish: {:?}", &message),
-                        }
-                    }).unwrap();
+                    topic
+                        .subscribe(move |message| match publisher.publish(&message) {
+                            Ok(()) => {}
+                            Err(_) => {
+                                eprintln!("Failed to publish message from subscriber {:?}", &i)
+                            }
+                        })
+                        .unwrap();
                 }
             }
             None => {
